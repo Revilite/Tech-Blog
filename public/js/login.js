@@ -1,8 +1,5 @@
 const submitButton = document.querySelector("#submit");
 
-
-
-
 async function formHandler(event) {
     event.preventDefault();
     console.info("Hello Worlds");

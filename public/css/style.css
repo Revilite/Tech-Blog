@@ -1,16 +1,11 @@
 body{
-    background-color: #565758;
-    color: white;
+    background-color: #121212;
 }
 
 nav{
-    background-color: forestgreen;
-    display: flex;
-    justify-content: space-around;
-    padding: 35px;
+    background-color: #343434;
+    
 }
 nav a{
-    color: white;
-    text-decoration: none;
-    font-size: 40px;
+    color: #08f3f7;
 }
