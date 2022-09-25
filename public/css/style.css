@@ -15,3 +15,6 @@ body{
     color: #020408;
     font-weight: bolder;
 }
+.silent {
+    display:none;
+}
