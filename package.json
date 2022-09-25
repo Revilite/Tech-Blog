@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sync": "node db/sync"
+    "sync": "node db/sync",
+    "seed": "node seeds"
   },
   "repository": {
     "type": "git",
