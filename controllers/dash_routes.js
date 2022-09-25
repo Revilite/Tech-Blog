@@ -1,5 +1,5 @@
 const dash = require("express").Router();
-const User = require("../models/users");
+const models = require("../models");
 
 
 

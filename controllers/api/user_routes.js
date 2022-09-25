@@ -1,12 +1,12 @@
 const users = require("express").Router();
-const User = require("../../models/users");
+const models = require("../../models");
 
 
 
 
 users.get("/", async (req, res) =>{
     try{
-        const data = await User.findAll();
+        const data = await models.User.findAll();
         res.status(200).json(data);
      
     }
