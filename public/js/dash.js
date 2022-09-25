@@ -1,10 +1,14 @@
 const newButton = document.querySelector("#newButton");
+window.alert("Hello World");
 
-const newPostHandler = async function(event){
+
+ async function newPostHandler(event){
     event.preventDefault();
-    
+    window.alert("Hello World");
+    const newPost = document.querySelector("#newPost");
+    newPost.s
 }
 
 
 
-newButton.addEventListener("click", newPostHandler());
+newButton.addEventListener("submit", newPostHandler);
