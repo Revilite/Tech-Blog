@@ -3,7 +3,12 @@ const models = require("../models");
 
 
 dash.get("/", async (req, res) =>{
-        res.render("dash");
+        const data = await models.Post.findAll()
+        .catch((err) =>{
+                throw err;
+        }) 
+        const posts = data.map((post) => post.get({plain : true}));
+        res.render("dash", {posts});
 })
 
 dash.post("/", async (req, res) =>{

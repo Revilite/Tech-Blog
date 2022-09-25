@@ -10,16 +10,16 @@
     <nav class="row d-flex justify-content-center">
     <p class="d-flex justify-content-center col-3 lightGray textColor h1 p-4 rounded-bottom">This is Dashboard</p>
     </nav>
-
+    {{#each posts}}
     <div class="m-5 border rounded lightGray">
             <h2 class="almostWhite rounded-top p-2 headerText">
-                Hello World
+                {{title}}
             </h2>
             <h4 class="px-2 rounded-bottom textColor">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quibusdam libero accusamus error odio. Atque dolor sunt suscipit tempora explicabo, esse ipsum eius est eligendi, molestias, animi perspiciatis dolorum voluptas.
+                {{body}}
             </h4>
     </div>
-
+    {{/each}}
     <div class="m-5 border rounded lightGray silent" id="newPost">
         <h2 class="almostWhite rounded-top p-2 headerText">
             Create New Post
