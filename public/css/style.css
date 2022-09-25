@@ -1,9 +1,12 @@
 body{
     background-color: #121212;
 }
-.lightGray {
+.darkGray {
     background-color: #343434;
     border-color: #343434;
+}
+.lightGray{
+    background-color: #454647;
 }
 .textColor {
     color: #08f3f7;
