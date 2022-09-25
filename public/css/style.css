@@ -1,11 +1,17 @@
 body{
     background-color: #121212;
 }
-
-nav{
+.lightGray {
     background-color: #343434;
-    
+    border-color: #343434;
 }
-nav a{
+.textColor {
     color: #08f3f7;
+}
+.almostWhite {
+    background-color: #999;
+}
+.headerText {
+    color: #020408;
+    font-weight: bolder;
 }

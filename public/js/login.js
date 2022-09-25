@@ -2,7 +2,6 @@ const submitButton = document.querySelector("#submit");
 
 async function formHandler(event) {
     event.preventDefault();
-    console.info("Hello Worlds");
     const username = document.querySelector("#username").value;
     const password = document.querySelector("#password").value;
 
