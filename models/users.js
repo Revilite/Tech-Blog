@@ -18,6 +18,10 @@ User.init(
         password : {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        isOnline:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         }
 
     },

@@ -1,9 +1,8 @@
-const submitButton = document.querySelector("#submit");
-
+const loginButton = document.querySelector("#signup");
 async function formHandler(event) {
     event.preventDefault();
-    const username = document.querySelector("#username").value;
-    const password = document.querySelector("#password").value;
+    const username = document.querySelector("#usernameSignUp").value;
+    const password = document.querySelector("#passwordSignUp").value;
 
     window.location.replace("http://localhost:3001/api/users");
     const response = await fetch("/login", {
@@ -11,6 +10,7 @@ async function formHandler(event) {
         body: JSON.stringify({
             username,
             password,
+            isOnline: true,
         }),
         headers: {
             "Content-Type": "application/json",
@@ -20,4 +20,4 @@ async function formHandler(event) {
 }
 
 
-submitButton.addEventListener("submit", formHandler);
+loginButton.addEventListener("submit", formHandler);

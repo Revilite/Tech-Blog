@@ -3,10 +3,7 @@ const models = require("../models");
 
 
 home.get("/", async (req, res) =>{ 
-    
-
-
-    res.render('home', );
+    res.render('home', {});
 })
 
 

@@ -11,6 +11,7 @@ try{
     const data = await models.User.create({
         username: req.body.username,
         password: req.body.password,
+        isOnline: req.body.isOnline,
     });
     res.status(200).json(data);
 }
