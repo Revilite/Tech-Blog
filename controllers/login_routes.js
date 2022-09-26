@@ -20,6 +20,17 @@ catch (err){
     throw err;
 }
 
-})
+});
+
+login.put("/", async(req, res) =>{
+    try{
+        const data = await models.User.findAll();
+        
+
+        
+        }
+    catch(err){
+    }})
+    
 
 module.exports = login;

@@ -7,7 +7,9 @@ const models = require("../../models");
 users.get("/", async (req, res) =>{
     try{
         const data = await models.User.findAll();
-        res.status(200).json(data);
+
+
+        return res.status(200).json(data);
      
     }
     catch (err){
@@ -16,5 +18,9 @@ users.get("/", async (req, res) =>{
     }
 })
 
+
+users.put("/", async (req, res) =>{
+        console.log(req.body);
+})
 
 module.exports = users;
