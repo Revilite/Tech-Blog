@@ -3,11 +3,12 @@ const models = require("../models");
 
 
 home.get("/", async (req, res) =>{ 
-    const data = await models.User.findAll()
-    .catch((err) => {throw err});
-
-    const isOnline = data.map((user) => user.get({plain : true}));
-    res.render('all', {isOnline});
+    const data = await models.Post.findAll()
+    .catch((err) =>{
+        throw err;
+    })
+    const posts = data.map((post) => post.get({plain: true}));
+    res.render("all", {posts})
 })
 
 

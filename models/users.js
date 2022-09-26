@@ -18,17 +18,18 @@ User.init(
         password : {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: [8],
+            }
         },
         isOnline:{
             type: DataTypes.BOOLEAN,
             allowNull: false,
-        }
-
+        },
     },
     {
         sequelize,
         underscored: true,
-        freezeTableName: true,
         modelName: "user",
     }
 

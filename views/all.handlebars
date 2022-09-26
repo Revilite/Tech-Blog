@@ -10,6 +10,15 @@
     <nav class="row d-flex justify-content-center">
         <p class="h1 d-flex justify-content-center col-4 lightGray textColor p-4 rounded-bottom">The Tech Blog</p>
     </nav>
-    
+     {{#each posts}}
+    <div class="m-5 border rounded darkGray">
+            <h2 class="almostWhite rounded-top p-2 headerText">
+                {{title}}
+            </h2>
+            <h4 class="px-2 rounded-bottom textColor">
+                {{body}}
+            </h4>
+    </div>
+    {{/each}}
 </body>
 </html>

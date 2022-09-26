@@ -8,7 +8,7 @@ dash.get("/", async (req, res) =>{
                 throw err;
         }) 
         const posts = data.map((post) => post.get({plain : true}));
-        res.render("dash", {posts});
+        res.render("dash", {posts: posts});
 })
 
 dash.post("/", async (req, res) =>{
