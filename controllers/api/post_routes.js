@@ -1,5 +1,6 @@
 const posts = require("express").Router();
 const models = require("../../models");
+const { post } = require("../dash_routes");
 
 
 posts.get("/", async (req, res) =>{
@@ -11,6 +12,20 @@ posts.get("/", async (req, res) =>{
         res.status(500).json(err);
         throw err;
     }
+})
+
+posts.post("/", async(req, res) =>{
+    try{
+        const data = await models.Post.create({
+                title: req.body.title,
+                body: req.body.body,
+        });
+        res.status(200).json(data);
+}
+catch(err){
+        res.status(500).json(err);
+        throw err;
+}
 })
 
 

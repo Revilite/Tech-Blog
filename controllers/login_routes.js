@@ -7,26 +7,13 @@ login.get("/", async(req, res) =>{
 })
 
 login.post("/",  async(req, res) =>{
-try{
-    const data = await models.User.create({
-        username: req.body.username,
-        password: req.body.password,
-        isOnline: req.body.isOnline,
-    });
-    res.status(200).json(data);
-}
-catch (err){
-    res.status(500).json(err);
-    throw err;
-}
+
 
 });
 
 login.put("/", async(req, res) =>{
     try{
         const data = await models.User.findAll();
-        
-
         
         }
     catch(err){

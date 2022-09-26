@@ -19,7 +19,7 @@ async function formHandeler(event){
     const title = document.querySelector("#title").value;
     const body = document.querySelector("#body").value;
 
-    const response = await fetch("/dashboard", {
+    const response = await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
             title,

@@ -28,7 +28,7 @@ async function createNewUser(event) {
     const password = document.querySelector("#passwordSignUp").value;
 
     window.location.replace("http://localhost:3001/api/users");
-    const response = await fetch("/login", {
+    const response = await fetch("/api/users", {
         method: "POST",
         body: JSON.stringify({
             username,
