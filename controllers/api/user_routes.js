@@ -7,8 +7,6 @@ const models = require("../../models");
 users.get("/", async (req, res) =>{
     try{
         const data = await models.User.findAll();
-
-
         return res.status(200).json(data);
      
     }
@@ -19,8 +17,5 @@ users.get("/", async (req, res) =>{
 })
 
 
-users.put("/", async (req, res) =>{
-        console.log(req.body);
-})
 
 module.exports = users;

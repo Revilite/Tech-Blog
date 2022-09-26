@@ -3,7 +3,11 @@ const models = require("../models");
 
 
 home.get("/", async (req, res) =>{ 
-    res.render('home', {});
+    const data = await models.User.findAll()
+    .catch((err) => {throw err});
+
+    const isOnline = data.map((user) => user.get({plain : true}));
+    res.render('all', {isOnline});
 })
 
 
