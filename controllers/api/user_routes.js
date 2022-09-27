@@ -32,7 +32,7 @@ users.post("/", async (req, res) =>{
             .json({message: "incorrect email or password, please try again"});
         }   
         req.session.save(() =>{
-            req.session.username = username.id;
+            req.session.username = data.id;
             req.session.isOnline = true;
 
             res.json({user : username, message: "You are now logged in!"});
