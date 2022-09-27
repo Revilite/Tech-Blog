@@ -17,18 +17,26 @@ users.get("/", async (req, res) =>{
 })
 
 users.post("/", async (req, res) =>{
-    try{
-        const data = await models.User.create({
-            username: req.body.username,
-            password: req.body.password,
-            isOnline: req.body.isOnline,
-        });
-        res.status(200).json(data);
-    }
-    catch (err){
-        res.status(500).json(err);
-        throw err;
-    }
+    
+    const data = await models.User.findOne({ where: { username: req.body.username } });
+        if(!data){
+            res.status(400)
+            .json({message: "incorrect email or password, please try again"});
+            return;
+        }        
+
+        const validPassword = await data.checkPassword(req.body.password);
+        console.log(validPassword);
+        if(!validPassword) {
+            res.status(400)
+            .json({message: "incorrect email or password, please try again"});
+        }   
+        req.session.save(() =>{
+            req.session.username = username.id;
+            req.session.isOnline = true;
+
+            res.json({user : username, message: "You are now logged in!"});
+        })
 })
 
 

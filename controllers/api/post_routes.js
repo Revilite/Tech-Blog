@@ -1,6 +1,5 @@
 const posts = require("express").Router();
 const models = require("../../models");
-const { post } = require("../dash_routes");
 
 
 posts.get("/", async (req, res) =>{

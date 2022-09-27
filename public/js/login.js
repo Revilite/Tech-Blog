@@ -1,3 +1,5 @@
+
+
 const sSignUp = document.querySelector("#switchSignUp"); //Switch Buttons
 const sLogIn = document.querySelector("#switchLogIn")
 
@@ -27,8 +29,10 @@ async function createNewUser(event) {
     const username = document.querySelector("#usernameSignUp").value;
     const password = document.querySelector("#passwordSignUp").value;
 
-    window.location.replace("http://localhost:3001/api/users");
-    const response = await fetch("/api/users", {
+
+    console.log(username);
+    if(username && password && password.length >= 8){
+    const response = await fetch("/login", {
         method: "POST",
         body: JSON.stringify({
             username,
@@ -39,26 +43,37 @@ async function createNewUser(event) {
             "Content-Type": "application/json",
         }
     });
-    console.log(response)
+    console.log(response);
+    window.location.replace("http://localhost:3001/api/users");
+}
+else{
+    window.alert("Your password has to be more than 8 characters long");
+}
 }
 
 const loginUser = async function(event) {
-    // event.preventDefault();
-    // const username = document.querySelector("#usernameLogIn");
-    // const password = document.querySelector("#passwordLogIn");
-    // const data = fetch("/api/users", {
-    //     method: "PUT",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: {
-    //         username, 
-    //         password,
-    //         isOnline: true,
-    //     }
-    // });
-    // JSON.stringify(data);
-
+    event.preventDefault();
+    const username = document.querySelector("#usernameLogIn").value;
+    const password = document.querySelector("#passwordLogIn").value;
+    if(username && password){
+    const data = fetch("/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username,
+            password,
+            isOnline: true,
+        })
+    });
+    if(data.ok){
+        document.location.replace("/");
+    }
+    else{
+        alert("Incorrect email or password, Please try again");
+    };
+    }
 
 }
 
