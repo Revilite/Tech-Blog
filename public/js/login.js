@@ -66,13 +66,9 @@ const loginUser = async function(event) { //log in
             "Content-Type": "application/json",
         },
     });
- 
-    if(data.ok){
-        document.location.replace("/");
-    }
-    else{
+    if(!data.ok){
         alert("Incorrect email or password, Please try again");
-    };
+    }
     }
 
 }

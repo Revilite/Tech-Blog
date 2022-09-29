@@ -6,7 +6,7 @@ login.get("/", async(req, res) =>{
     res.render("login");
 })
 
-login.post("/",  async(req, res) =>{
+login.post("/",  async(req, res) =>{ //Sign Up
 try{
     const data = await models.User.create({
         username: req.body.username,
@@ -17,7 +17,7 @@ try{
 
     
     req.session.save(() => {
-        req.session.loggedIn = true;
+        req.session.isOnline = true;
       });
 }
 catch(err){

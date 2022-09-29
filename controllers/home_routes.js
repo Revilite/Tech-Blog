@@ -8,7 +8,7 @@ home.get("/", async (req, res) =>{
         throw err;
     })
     const posts = data.map((post) => post.get({plain: true}));
-    res.render("all", {posts})
+    res.render("all", {posts, isOnline: req.session.isOnline})
 })
 
 
