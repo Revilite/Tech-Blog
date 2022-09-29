@@ -29,10 +29,9 @@ users.post("/", async (req, res) =>{  // Login
             .json({message: "incorrect email or password, please try again"});
             return;
         }   
-        req.session.save(() =>{
-            req.session.username = data.id;
-            req.session.isOnline = true;
-        })
+        req.session.username = data.id;
+        req.session.isOnline = true;
+        req.session.save()
        return res.status(200).json({message:"Success"});
         
        

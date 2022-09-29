@@ -13,9 +13,8 @@ try{
         password: req.body.password,
         isOnline: true,
     })
-    req.session.save(() => {
-        req.session.isOnline = true;
-    });
+    req.session.isOnline = true;
+    req.session.save();
     res.status(200).json(data);
 }
 catch(err){
