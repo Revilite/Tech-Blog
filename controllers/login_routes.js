@@ -14,9 +14,14 @@ try{
         isOnline: true,
     })
     res.status(200).json(data);
+
+    
+    req.session.save(() => {
+        req.session.loggedIn = true;
+      });
 }
 catch(err){
-    res.status(500).json(data);
+    res.status(500).json(err);
     throw err;
 }
 });

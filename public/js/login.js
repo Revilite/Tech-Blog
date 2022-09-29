@@ -31,7 +31,7 @@ async function createNewUser(event) {
 
 
     console.log(username);
-    if(username && password && password.length >= 8){
+    if(username && password && password.length >= 8){ //sign up
     const response = await fetch("/login", {
         method: "POST",
         body: JSON.stringify({
@@ -44,29 +44,29 @@ async function createNewUser(event) {
         }
     });
     console.log(response);
-    window.location.replace("http://localhost:3001/api/users");
+    window.location.replace("/")
 }
 else{
     window.alert("Your password has to be more than 8 characters long");
 }
 }
 
-const loginUser = async function(event) {
+const loginUser = async function(event) { //log in
     event.preventDefault();
     const username = document.querySelector("#usernameLogIn").value;
     const password = document.querySelector("#passwordLogIn").value;
     if(username && password){
-    const data = fetch("/api/users", {
+    const data = await fetch("/api/users", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
         body: JSON.stringify({
             username,
             password,
-            isOnline: true,
-        })
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
     });
+ 
     if(data.ok){
         document.location.replace("/");
     }
