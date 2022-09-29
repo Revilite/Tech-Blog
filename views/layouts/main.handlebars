@@ -13,13 +13,16 @@
     <a href="/" class="px-5 h2 textColor">Home</a>
     <a href="/dashboard" class="px-5 h2 textColor">Dashboard</a>
     {{#if isOnline}}
-    <a href="/logout" class="px-5 h2 textColor">Logout</a> 
+    <a href="/" class="px-5 h2 textColor" id="logout">Logout</a> 
     {{else}}
     <a href="/login" class="px-5 h2 textColor">Login</a> 
     {{/if}}
     </nav>
         {{{body}}}
 
+{{#if isOnline}}
+<script src="/js/logout.js"></script>
+{{/if}}
 
 </body>
 </html>

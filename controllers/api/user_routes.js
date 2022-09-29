@@ -27,16 +27,28 @@ users.post("/", async (req, res) =>{  // Login
         if(!validPassword) {
             res.status(400)
             .json({message: "incorrect email or password, please try again"});
+            return;
         }   
         req.session.save(() =>{
             req.session.username = data.id;
             req.session.isOnline = true;
         })
-        res.render("all", {isOnline: req.session.isOnline})
+       return res.status(200).json({message:"Success"});
         
        
 })
 
+
+users.post("/logout", async (req,res) =>{
+if(req.session.isOnline){
+    req.session.destroy(() =>{
+        res.status(204).end();
+    });
+}
+else{
+    res.status(404).end();
+}
+})
 
 
 module.exports = users;

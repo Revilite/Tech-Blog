@@ -13,12 +13,10 @@ try{
         password: req.body.password,
         isOnline: true,
     })
-    res.status(200).json(data);
-
-    
     req.session.save(() => {
         req.session.isOnline = true;
-      });
+    });
+    res.status(200).json(data);
 }
 catch(err){
     res.status(500).json(err);

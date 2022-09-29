@@ -43,7 +43,6 @@ async function createNewUser(event) {
             "Content-Type": "application/json",
         }
     });
-    console.log(response);
     window.location.replace("/")
 }
 else{
@@ -68,6 +67,10 @@ const loginUser = async function(event) { //log in
     });
     if(!data.ok){
         alert("Incorrect email or password, Please try again");
+    }
+    else{
+        window.location.replace("/");
+        
     }
     }
 
